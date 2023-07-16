@@ -20,3 +20,8 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(x = data.index, y = data['Close'], name = 'Fechamento'))
 fig.update_layout(title = f"{ticker_symbol}", xaxis_title = 'Data', yaxis_title = 'Preço')
 st.plotly_chart(fig)
+
+# Exibir o gráfico de volume
+fig_volume = go.Figure()
+fig_volume.add_trace(go.Scatter(x=data.index, y=data['Volume'], name='Volume'))
+fig_volume.update_layout(title=f"{ticker_symbol}", xaxis_title='Data', yaxis_title='Volume')
