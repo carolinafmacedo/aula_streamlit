@@ -3,7 +3,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 
 # Titulo do app
-st.title('Stock History App')
+st.title('StockApp')
 
 st.sidebar.title('Selecione o stock')
 ticker_symbol = st.sidebar.text_input('stock', 'AAPL', max_chars=10)
