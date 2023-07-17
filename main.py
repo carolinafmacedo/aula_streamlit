@@ -1,5 +1,6 @@
 import streamlit as st
 import yfinance as yf
+import numpy as np
 import plotly.graph_objects as go
 
 # Titulo do app
@@ -29,7 +30,7 @@ data2 = yf.download(ticker_symbol2, start = '2020-01-01', end = '2023-06-26')
 
 # exibir os dados
 st.subheader('Histórico')
-st.dataframe(data)
+st.dataframe(data2)
 
 # Exibir o gráfico
 fig_close2 = go.Figure()
