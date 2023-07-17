@@ -2,7 +2,7 @@ import streamlit as st
 import yfinance as yf
 import plotly.graph_objects as go
 
-# Titulo do app
+# Titulo do aplicativo
 st.title('StockApp')
 
 st.sidebar.title('Selecione o stock')
