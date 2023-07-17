@@ -36,3 +36,17 @@ fig_close2 = go.Figure()
 fig_close2.add_trace(go.Scatter(x = data2.index, y = data2['Close'], name = 'Fechamento'))
 fig_close2.update_layout(title = f"{ticker_symbol2}", xaxis_title = 'Data', yaxis_title = 'Preço')
 st.plotly_chart(fig_close2)
+
+#CALCULAR IRF
+
+returns2 = np.log(data2['Close']).diff().dropna()
+model2 = sm.tsa.VAR(returns2)
+results2 = model2.fit(maxlags=10, ic='aic')
+irf2 = results2.irf(10)
+
+#Exibir Grafico
+fig_irf2 = go.Figure()
+for i in range(len(return2.columns)):
+  fig_irf2.add_trace(go.Scatter(x=irf2.irfperiods, y=irf2.irfs[:, i, i], name=return2.columns[i]))
+  fig_irf2.update_layout(title='Impulse Response Function - Grafico 2', xaxis_title='Periodo', yaxis_title='IRF')
+  st.plotly_chart(fig_irf2)
