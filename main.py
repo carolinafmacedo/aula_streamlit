@@ -2,7 +2,7 @@ import streamlit as st
 import yfinance as yf
 import plotly.graph_objects as go
 import numpy as np
-import statsmodels as sm
+import statsmodels.tsa.api as smt
 
 # Titulo do app
 st.title('StockApp')
