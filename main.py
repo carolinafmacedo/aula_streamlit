@@ -2,6 +2,8 @@ import streamlit as st
 import yfinance as yf
 import plotly.graph_objects as go
 import numpy as np
+import pkg_resources
+pkg_resources.require("statsmodels==0.12.2")
 import statsmodels.api as sm
 
 # Titulo do app
