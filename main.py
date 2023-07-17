@@ -6,7 +6,7 @@ import pkg_resources
 pkg_resources.require("statsmodels==0.12.2")
 import statsmodels.api as sm
 
-# Titulo do app
+# Titulo do aplicativo
 st.title('StockApp')
 
 st.sidebar.title('Selecione o stock')
